@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+    <a href="{% url 'bills:bills-list' %}">go back</a>
+    <hr>
+    creating a bill
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock content %}
+ 
