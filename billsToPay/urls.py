@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from bills.views import home_page
+from bills.views import home_page, LandingPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page),
+    path('', LandingPageView.as_view()),
     path('bills/', include('bills.urls', namespace="bills")),
 ]
