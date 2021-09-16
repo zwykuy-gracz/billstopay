@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+
+<a href="{% url 'bills:bills-list' %}">go back</a>
+<hr />
+<h2>Are you sure you want to delete the {{ bill.name }}</h2>
+<form method="POST" action="">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock content %}

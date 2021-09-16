@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+    <a href="{% url 'bills:bill-detail' bill.pk %}">go back to {{ bill.name }}</a>
+    <hr>
+    updating a bill {{ bill.name }}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% endblock content %}

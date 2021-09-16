@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+  
+{% block content %}
+  
+<a href="{% url 'bills:bill-create' %}">create a new bill</a>
+
+{% for bill in bills %}
+<div class="bill">
+  
+  <a href="{% url 'bills:bill-detail' bill.pk %}">{{ bill.name}}</a>
+  {{ bill.amount }} złotych |
+  do {{ bill.dueDate }} |
+  automatyczna płatność: {{ bill.automaticPayment }}
+  <!-- <br> -->
+</div>
+{% endfor %}
+
+{% endblock content %}

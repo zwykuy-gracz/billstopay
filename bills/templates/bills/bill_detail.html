@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+    <a href="{% url 'bills:bills-list' %}">go back</a>
+    <hr>
+    <h2>Details</h2>
+    {{ bill.name }}
+    {{ bill.amount }}
+    <hr>
+    <a href="{% url 'bills:bill-update' bill.pk %}">Update</a>
+    <a href="{% url 'bills:bill-delete' bill.pk %}">Delete</a>
+
+    {% endblock content %}
